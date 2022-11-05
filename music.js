@@ -8,6 +8,7 @@ const progress = document.querySelector(".progress");
 const progressContainer = document.querySelector(".progress-container");
 const title = document.querySelector("#title");
 const coverimg = document.querySelector(".album-art");
+const actionimate = document.querySelector(".full-body");
 //song title
 const songs = ["Gut Guitar Ver", "d.m.c", "faint", "I will be your home"];
 
@@ -25,11 +26,16 @@ function loadSong(song) {
 }
 function playSong() {
   coverimg.classList.add("play");
+  // actionimate.style.remove.background;
+  actionimate.classList.add("actionimate");
+
   musicInfo.classList.remove("hide");
   playBtn.innerHTML = "Pause";
   audio.play();
 }
 function pauseSong() {
+    actionimate.classList.remove("actionimate");
+
   coverimg.classList.remove("play");
   playBtn.innerHTML = "Play";
   musicInfo.classList.add("hide");
